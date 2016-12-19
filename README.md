@@ -7,6 +7,7 @@ Repositorio donde se publicará todo el código que usemos en los tutoriales del
 * Implementado PHP PDO
 * Utilizando la librería Fluent PDO 
 * Implementando Datatables
+* Envíando AJAX: jQuery Form Plugin
 
 ### A quién va enfocado
 
