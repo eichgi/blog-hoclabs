@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DataTable Tutorial</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="well">
+                <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1">
+                        <table id="mi-tabla" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>Framework</th>
+                                <th>Lenguaje</th>
+                                <th>Tipo</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Laravel</td>
+                                <td>PHP</td>
+                                <td>Backend</td>
+                            </tr>
+                            <tr>
+                                <td>React</td>
+                                <td>JavaScript</td>
+                                <td>Frontend</td>
+                            </tr>
+                            <tr>
+                                <td>Ruby on Rails</td>
+                                <td>Ruby</td>
+                                <td>Backend</td>
+                            </tr>
+                            <tr>
+                                <td>Django</td>
+                                <td>Python</td>
+                                <td>Backend</td>
+                            </tr>
+                            <tr>
+                                <td>Spring</td>
+                                <td>Java</td>
+                                <td>Backend</td>
+                            </tr>
+                            <tr>
+                                <td>Vue</td>
+                                <td>JavaScript</td>
+                                <td>Frontend</td>
+                            </tr>
+                            <tr>
+                                <td>Express</td>
+                                <td>JavaScript</td>
+                                <td>Backend</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery.js"></script>
+<script src="js/jquery.dataTables.js"></script>
+<script src="js/dataTables.bootstrap.js"></script>
+<script>
+    $('#mi-tabla').DataTable();
+</script>
+</body>
+</html>

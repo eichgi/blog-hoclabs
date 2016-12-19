@@ -1,0 +1,37 @@
+[
+  {
+    "0": "Laravel",
+    "1": "PHP",
+    "2": "Backend"
+  },
+  {
+    "0": "React",
+    "1": "Javascript",
+    "2": "Frontend"
+  },
+  {
+    "0": "Ruby on Rails",
+    "1": "Ruby",
+    "2": "Backend"
+  },
+  {
+    "0": "Django",
+    "1": "Python",
+    "2": "Backend"
+  },
+  {
+    "0": "Spring",
+    "1": "Java",
+    "2": "Backend"
+  },
+  {
+    "0": "Vue",
+    "1": "Javascript",
+    "2": "Frontend"
+  },
+  {
+    "0": "Express",
+    "1": "Javascript",
+    "2": "Backend"
+  }
+]
