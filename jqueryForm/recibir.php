@@ -1,7 +1,9 @@
 <?php
 
-if (file_exists($_FILES['avatar']['tmp_name'])) {
+if (isset($_FILES['avatar'])) {
     $_POST['avatar'] = $_FILES['avatar']['name'];
+} else {
+    $_POST['avatar'] = 'Sin imagen';
 }
 
 print_r($_POST);

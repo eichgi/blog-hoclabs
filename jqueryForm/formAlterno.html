@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>jQueryFormPlugin | Tutorial</title>
+    <!--Cargamos Bootstrap para una mejor presentación (opcional)-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="page-header">
+            <h1>Práctica jQuery Form Plugin
+                <small>::Formularios AJAX más fácil::</small>
+            </h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <form id="formulario" class="form"> <!--Innecesario definir más atributos-->
+                <div class="form-group">
+                    <label>Nombre:</label>
+                    <input type="text" class="form-control" name="nombre" value="Dennis Ritchie">
+                </div>
+                <div class="form-group">
+                    <label>Edad:</label>
+                    <input type="number" class="form-control" name="edad" value="64">
+                </div>
+                <div class="form-group">
+                    <label>Contraseña:</label>
+                    <input type="password" class="form-control" name="password" value="01248">
+                </div>
+                <div class="form-group">
+                    <label>Género:</label>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="genero" value="masculino" checked>
+                            Masculino
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="genero" value="femenino">
+                            Femenino
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Lenguajes que utilizas:</label>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="lenguajes[]" value="PHP" checked>
+                            PHP
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="lenguajes[]" value="JavaScript">
+                            Javascript
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="lenguajes[]" value="Swift" checked>
+                            Swift
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="lenguajes[]" value="Python">
+                            Python
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>S.O. que utilizas:</label>
+                    <select class="form-control" name="so">
+                        <option value="windows">Windows</option>
+                        <option value="mac">Mac</option>
+                        <option value="linux" selected>Linux</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Avatar:</label>
+                    <input type="file" name="avatar">
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" value="Envíar">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--Cargamos la libreria jQuery (necesario)-->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+
+<!--Cargamos la libreria del plugin (necesario)-->
+<script src="http://malsup.github.com/jquery.form.js"></script>
+
+<script>
+    $('#formulario').submit(function (e) {
+        e.preventDefault();
+        var options = {
+            url: 'recibir.php', //El "action" del form
+            type: 'post', //El "method" del form
+            dataType: 'json', //El formato en que la respuesta sera recibida
+            clearForm: true, //Limpia el formulario una vez envíados los datos
+            success: function (response) { //Si la respuesta fue satisfactoria aqui es donde llega
+                console.log(response);
+            }
+        };
+        $(this).ajaxSubmit(options);
+    });
+</script>
+</body>
+</html>
