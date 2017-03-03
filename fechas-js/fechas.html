@@ -1,0 +1,23 @@
+<script>
+    //Imprimir la fecha actual
+    var fechaActual = new Date(); //Si no especificamos un parametro por defecto muestra el momento actual
+    console.log(fechaActual); //Sat Dec 31 2016 19:49:42 GMT-0600 (Hora estándar central (México))
+
+    //Definiendo la fecha a almacenar como string
+    var cumpleaños = new Date("December 15, 1990 03:24:00");
+    console.log(cumpleaños);
+
+    //Definiendo la fecha a almacenar como enteros
+    cumpleaños = new Date(1990, 12, 15); // Solo definimos Año, Mes, Día
+    cumpleaños = new Date(1990, 12, 15, 3, 24, 0); //Definiendo Año, Mes, Día, Hora, Minuto, Segundo
+    console.log(cumpleaños);
+
+    //Definiendo la fecha en formato UNIX
+    var unixTimeAFecha = new Date(661219200000); //Este valor equivale a 12/15/1990 @ 12:00am (UTC)
+    console.log(unixTimeAFecha);
+
+    //Si queremos obtener el unix timestamp a partir de una fecha ordinaria usamos el método parse
+    var fechaAUnixtime = Date.parse(1990, 12, 15);
+    console.log(fechaAUnixtime); //Obtenemos: 631152000000
+
+</script>

@@ -1,0 +1,37 @@
+<script src="moment.js"></script>
+<script src="moment-with-locales.js"></script>
+<script>
+    //Por defecto moment esta en inglés, si incluimos el script moment-with-locale.js podemos definir el idioma en que queremos la respuesta
+    moment.locale('es');
+
+    var fechaUno = Date.parse("2017-02-03 20:48:00"); //Formato YYYY-MM-DD hh:mm:ss
+    var fechaDos = Date.parse(new Date()); //Captura el momento actual en el mismo formato
+
+    /** FORMATOS DE FECHA*/
+    moment(fechaUno).format('MMMM Do YYYY, h:mm:ss a'); //febrero 3 2017, 8:48:00 pm
+    console.log(moment(fechaUno).format('dddd')); //viernes
+    console.log(moment(fechaUno).format('MMM Do YY')); //feb. 3 17
+    console.log(moment().format()); //Si no especificamos parámetro: 2017-03-02T20:58:44-06:00
+
+    /** TIEMPO RELATIVO */
+    //Con el método fromNow() nos regresa la diferencia de tiempo del momento actual al momento especificado
+    console.log(moment(fechaDos).fromNow()); //hace unos segundos
+    //Además podemos pasar como parámetro 'day' u 'hour' para especificar en que unidades queremos esa diferencia
+    console.log(moment(fechaDos).startOf('hour').fromNow()); //hace 12 minutos
+
+    //Con el método endOf() podemos pedir la diferencia entre el momento actual y el fin del día
+    console.log(moment().endOf('hour').fromNow()); //en 44 minutos
+    console.log(moment().endOf('day').fromNow()); //en 3 horas
+    console.log(moment(fechaDos).endOf('month').fromNow()); //en un mes (no es muy especifico xd)
+    console.log(moment(fechaDos).endOf('year').fromNow()); //en 10 meses (no es muy especifico xd)
+
+    /** TIEMPO EN FORMATO CALENDARIO */
+    console.log(moment().calendar()); //hoy a las 21:24
+    console.log(moment(fechaUno).calendar()); //03/02/2017
+    console.log(moment(fechaDos).add(1, 'days').calendar()); //Mañana a las 21:24
+    console.log(moment(fechaDos).add(10, 'days').calendar()); //12/03/2017
+
+    console.log(moment(fechaDos).subtract(10, 'days').calendar()); // 20/02/2017
+
+
+</script>
