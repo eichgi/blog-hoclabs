@@ -1,13 +1,15 @@
 # Practicas Blog HOC Labs
 
-Repositorio donde se publicará todo el código que usemos en los tutoriales del blog en [HOC Labs](https://hoclabs.com)
+Repositorio donde se publicará todo el código que usemos en las guías del blog en [HOC Labs](https://hoclabs.com)
 
-### Proyectos:
+### Prácticas:
 
 * Implementado PHP PDO
 * Utilizando la librería Fluent PDO 
 * Implementando Datatables
 * Envíando AJAX: jQuery Form Plugin
+* Manejo de fechas en Javascript
+* Uso de Moment JS (librería para manejar fechas en Javascript)
 
 ### A quién va enfocado
 

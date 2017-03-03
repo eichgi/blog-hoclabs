@@ -33,5 +33,32 @@
 
     console.log(moment(fechaDos).subtract(10, 'days').calendar()); // 20/02/2017
 
+    /** TIEMPO EN FORMATO COMÚN */
+    console.log(moment().format('LT')); //13:35
+    console.log(moment().format('LTS')); //13:35:50
+
+    //Entre más l o L definamos más especifica será la fecha retornada
+    console.log(moment().format('L')); //03/03/2017
+    console.log(moment().format('l')); //03 de mar. de 2017
+    console.log(moment().format('LL')); //03 de marzo de 2017
+    console.log(moment().format('ll')); //03 de mar. de 2017
+    console.log(moment().format('LLL')); //03 de marzo de 2017 13;37
+    console.log(moment().format('lll')); //03 de mar. de 2017 13:37
+    console.log(moment().format('LLLL')); //vernes, 3 de marzo de 2017 13;37
+    console.log(moment().format('llll')); //vie., 3 de mar. de 2017 13:37
+
 
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
