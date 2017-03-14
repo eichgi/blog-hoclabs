@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ChartJS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-6">
+            <!-- Definimos un canvas para la gráfica-->
+            <h2>Gráfica de Barras</h2>
+            <canvas id="grafica-barra"></canvas>
+        </div>
+        <div class="col-xs-6">
+            <h2>Gráfica barras horizontal</h2>
+            <canvas id="grafica-barras-horizontal"></canvas>
+        </div>
+        <div class="col-xs-6">
+            <h2>Gráfica lineal</h2>
+            <canvas id="grafica-lineal"></canvas>
+        </div>
+        <div class="col-xs-6">
+            <h2>Gráfica circular</h2>
+            <canvas id="grafica-circular"></canvas>
+        </div>
+        <div class="col-xs-6">
+            <h2>Gráfica de dona</h2>
+            <canvas id="grafica-dona"></canvas>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
+<script>
+
+    //Definimos el contexto de la gráfica en JS
+    var contexto = document.querySelector('#grafica-barra');
+
+    //Debemos crear un objeto de configuración donde definiremos el tipo de gráfica, la información que contendrá y
+    // las opciones de escalas y ejes.
+    var configuracion = {
+        type: 'bar', //Tipo de gráfica
+        data: { //Aqui definimos el nombre, el tamaño y el color de cada barra de la gráfica
+            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+            datasets: [{
+                label: 'Número de votos',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    };
+
+    //Ahora ya podemos generar nuestra gráfica creando una instancia de Chart(), a la cuál debemos pasarle dos párametros,
+    // el primero es el contexto y el segundo es el objeto con la configuración de nuestra gráfica.
+    var myChart = new Chart(contexto, configuracion);
+
+    /** ============================================================================================================= */
+
+    var horizontalBar = new Chart(document.querySelector('#grafica-barras-horizontal'), {
+        type: 'horizontalBar',
+        data: { //Aqui definimos el nombre, el tamaño y el color de cada barra de la gráfica
+            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+            datasets: [{
+                label: 'Número de votos',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                xAxes: [{
+                    stacked: false
+                }],
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    },
+                    stacked: true
+                }]
+            }
+        }
+    });
+
+    /** ============================================================================================================= */
+
+    var linealChart = new Chart(document.querySelector('#grafica-lineal'), {
+        type: 'line',
+        data: {
+            labels: ["January", "February", "March", "April", "May", "June", "July"],
+            datasets: [
+                {
+                    label: "Número de acciones",
+                    fill: false,
+                    lineTension: 0.1,
+                    backgroundColor: "rgba(75,192,192,0.4)",
+                    borderColor: "rgba(75,192,192,1)",
+                    borderCapStyle: 'butt',
+                    borderDash: [],
+                    borderDashOffset: 0.0,
+                    borderJoinStyle: 'mitloer',
+                    pointBorderColor: "rgba(75,192,192,1)",
+                    pointBackgroundColor: "#fff",
+                    pointBorderWidth: 1,
+                    pointHoverRadius: 5,
+                    pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                    pointHoverBorderColor: "rgba(220,220,220,1)",
+                    pointHoverBorderWidth: 2,
+                    pointRadius: 1,
+                    pointHitRadius: 10,
+                    data: [65, 59, 80, 81, 56, 55, 40],
+                    spanGaps: false,
+                }
+            ]
+        },
+        options: {
+            scales: {
+                xAxes: [{
+                    display: true
+                }],
+                yAxes: [{
+                    stacked: true
+                }]
+            }
+        }
+    });
+
+    /** ============================================================================================================= */
+
+    var circularChart = new Chart(document.querySelector('#grafica-circular'), {
+        type: 'pie',
+        data: {
+            labels: [
+                "Red",
+                "Blue",
+                "Yellow"
+            ],
+            datasets: [
+                {
+                    data: [300, 50, 100],
+                    backgroundColor: [
+                        "#FF6384",
+                        "#36A2EB",
+                        "#FFCE56"
+                    ],
+                    hoverBackgroundColor: [
+                        "#FF6384",
+                        "#36A2EB",
+                        "#FFCE56"
+                    ]
+                }]
+        }
+    });
+
+    /** ============================================================================================================= */
+
+    var circularChart = new Chart(document.querySelector('#grafica-dona'), {
+        type: 'doughnut',
+        data: {
+            labels: [
+                "Red",
+                "Blue",
+                "Yellow"
+            ],
+            datasets: [
+                {
+                    data: [300, 50, 100],
+                    backgroundColor: [
+                        "#FF6384",
+                        "#36A2EB",
+                        "#FFCE56"
+                    ],
+                    hoverBackgroundColor: [
+                        "#FF6384",
+                        "#36A2EB",
+                        "#FFCE56"
+                    ]
+                }]
+        }
+    });
+
+</script>
+</body>
+</html>
