@@ -10,9 +10,8 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-6">
-            <!-- Definimos un canvas para la gráfica-->
             <h2>Gráfica de Barras</h2>
-            <canvas id="grafica-barra"></canvas>
+            <canvas id="grafica-barra"></canvas> <!-- Definimos un canvas para la gráfica-->
         </div>
         <div class="col-xs-6">
             <h2>Gráfica barras horizontal</h2>
@@ -33,9 +32,8 @@
     </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script> <!-- Importamos el script de Chart.js -->
 <script>
-
     //Definimos el contexto de la gráfica en JS
     var contexto = document.querySelector('#grafica-barra');
 
@@ -44,22 +42,22 @@
     var configuracion = {
         type: 'bar', //Tipo de gráfica
         data: { //Aqui definimos el nombre, el tamaño y el color de cada barra de la gráfica
-            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+            labels: ["Ruby", "Javascript", "PHP", "Python", "Java", "C++"],
             datasets: [{
                 label: 'Número de votos',
                 data: [12, 19, 3, 5, 2, 3],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
                     'rgba(255, 206, 86, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
                     'rgba(75, 192, 192, 0.2)',
                     'rgba(153, 102, 255, 0.2)',
                     'rgba(255, 159, 64, 0.2)'
                 ],
                 borderColor: [
                     'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)',
                     'rgba(255, 206, 86, 1)',
+                    'rgba(54, 162, 235, 1)',
                     'rgba(75, 192, 192, 1)',
                     'rgba(153, 102, 255, 1)',
                     'rgba(255, 159, 64, 1)'
@@ -68,7 +66,7 @@
             }]
         },
         options: {
-            responsive: true,
+            responsive: true, //True por defecto
             scales: {
                 yAxes: [{
                     ticks: {
