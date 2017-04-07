@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Animate CSS</title>
+    <link rel="stylesheet" href="animate.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<div class="contenedor">
+    <p class="text">NUEVO MENSAJE <span class="badge"><i class="fa fa-asterisk"></i></span></p>
+    <span class="vertical-line"></span>
+</div>
+
+<div class="contenedor">
+    <div class="estilo-animacion">
+        <label>Llamar la atención!</label>
+        <select class="select-animar">
+            <option value="bounce">bounce</option>
+            <option value="flash">flash</option>
+            <option value="pulse">pulse</option>
+            <option value="rubberBand">rubberBand</option>
+            <option value="shake">shake</option>
+            <option value="swing">swing</option>
+            <option value="tada">tada</option>
+            <option value="wobble">wobble</option>
+            <option value="jello">jello</option>
+        </select>
+    </div>
+
+    <div class="estilo-animacion">
+        <label>Entra rebotando</label>
+        <select class="select-animar">
+            <option value="bounceIn">bounceIn</option>
+            <option value="bounceInDown">bounceInDown</option>
+            <option value="bounceInLeft">bounceInLeft</option>
+            <option value="bounceInRight">bounceInRight</option>
+            <option value="bounceInUp">bounceInUp</option>
+        </select>
+    </div>
+
+    <div class="estilo-animacion">
+        <label>Sale rebotando</label>
+        <select class="select-animar">
+            <option value="bounceOut">bounceOut</option>
+            <option value="bounceOutDown">bounceOutDown</option>
+            <option value="bounceOutLeft">bounceOutLeft</option>
+            <option value="bounceOutRight">bounceOutRight</option>
+            <option value="bounceOutUp">bounceOutUp</option>
+        </select>
+    </div>
+
+    <div class="estilo-animacion">
+        <label>Entra con Zoom</label>
+        <select class="select-animar">
+            <option value="zoomIn">zoomIn</option>
+            <option value="zoomInDown">zoomInDown</option>
+            <option value="zoomInLeft">zoomInLeft</option>
+            <option value="zoomInRight">zoomInRight</option>
+            <option value="zoomInUp">zoomInUp</option>
+        </select>
+    </div>
+
+    <div class="estilo-animacion">
+        <label>Sale con Zoom</label>
+        <select class="select-animar">
+            <option value="zoomOut">zoomOut</option>
+            <option value="zoomOutDown">zoomOutDown</option>
+            <option value="zoomOutLeft">zoomOutLeft</option>
+            <option value="zoomOutRight">zoomOutRight</option>
+            <option value="zoomOutUp">zoomOutUp</option>
+        </select>
+    </div>
+
+</div>
+
+<hr>
+<!--<button id="bounceOutLeft" class="btn">bounceOutLeft</button>
+<button id="bounce" class="btn">bounce</button>
+<button id="pulse" class="btn">pulse</button>
+<button id="custom" class="btn">custom</button>
+<button id="infinite" class="btn">Infinitamente</button>-->
+<script src="../datatable/js/jquery.js"></script>
+<script>
+    $.fn.extend({
+        animateCss: function (animationName) {
+            var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+            this.addClass('animated ' + animationName).one(animationEnd, function () {
+                $(this).removeClass('animated ' + animationName);
+            });
+        }
+    });
+
+    $('.select-animar').change(function () {
+        $('.text').animateCss($(this).val());
+    });
+
+    /*$('#infinite').click(function () {
+     $('.text').toggleClass('infinite');
+     });
+
+     $('#bounce').click(function () {
+     $('.text').toggleClass('bounce')
+     });
+
+     $('#pulse').click(function () {
+     $('.text').toggleClass('pulse')
+     });
+
+     $('#custom').click(function () {
+     $('.text').animateCss('pulse')
+     });
+
+     $('#bounceOutLeft').click(function () {
+     $('.text').addClass('bounceOutLeft')
+     });*/
+</script>
+</body>
+</html>
