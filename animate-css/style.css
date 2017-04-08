@@ -62,3 +62,24 @@ body {
 .estilo-animacion > label {
     display: block;
 }
+
+.pre {
+    display: inline-block;
+    background-color: #424242;
+    color: #fff;
+}
+
+.code {
+    display: block;
+    background-color: #424242;
+    color: #fff;
+    padding: 1em 1.5em;
+    font-family: monospace;
+    margin: 0 auto 0.5em;
+    width: 80%;
+}
+
+.code > pre {
+    text-align: left;
+    overflow: auto;
+}
