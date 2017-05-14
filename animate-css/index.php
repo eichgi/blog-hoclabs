@@ -1,3 +1,4 @@
+<?php /* Template Name: GenericAnimate */?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
