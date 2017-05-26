@@ -1,0 +1,12 @@
+{
+  "Persona": {
+    "nombre": "Hiram",
+    "edad": "26",
+    "profesion": "Desarrollador"
+  },
+  "lenguajes": [
+    "javascript",
+    "PHP",
+    "Java"
+  ]
+}
