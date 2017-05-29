@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Axios</title>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+
+            <div class="jumbotron">
+                <h1>Axios</h1>
+                <p>Cliente HTTP javascript basado en promesas</p>
+            </div>
+
+            <div class="botones">
+                <button class="btn btn-success btn-get btn-lg">GET Request</button>
+                <button class="btn btn-primary btn-post btn-lg">POST Request</button>
+                <button class="btn btn-warning btn-patch btn-lg">PATCH Request</button>
+                <button class="btn btn-danger btn-delete btn-lg">DELETE Request</button>
+            </div>
+            <br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h4>Objeto estándar Axios GET</h4>
+            <!-- HTML generated using hilite.me -->
+            <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre
+                    style="margin: 0; line-height: 125%">        axios({
+            url: <span style="color: #a31515">&#39;data.php&#39;</span>,
+            method: <span style="color: #a31515">&#39;GET&#39;</span>,
+            timeout: 3000,
+            responseType: <span style="color: #a31515">&#39;JSON&#39;</span>,
+        }).then(<span style="color: #0000ff">function</span> (response) {
+            console.log(response.data);
+        }).<span style="color: #0000ff">catch</span>(<span style="color: #0000ff">function</span> (error) {
+            console.log(error.response.statusText);
+        });
+</pre>
+            </div>
+
+
+        </div>
+
+        <div class="col">
+            <h4>Respuesta</h4>
+            <!-- HTML generated using hilite.me -->
+            <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                <pre
+                        style="margin: 0; line-height: 125%">{
+  &quot;Persona&quot;: {
+    &quot;nombre&quot;: <span style="color: #a31515">&quot;John Die&quot;</span>,
+    &quot;edad&quot;: <span style="color: #a31515">&quot;50&quot;</span>,
+    &quot;profesion&quot;: <span style="color: #a31515">&quot;Desarrollador&quot;</span>
+  },
+  &quot;lenguajes&quot;: [
+    <span style="color: #a31515">&quot;Javascript&quot;</span>,
+    <span style="color: #a31515">&quot;PHP&quot;</span>,
+    <span style="color: #a31515">&quot;Java&quot;</span>
+  ]
+}
+</pre>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col">
+            <h4>Objeto estándar Axios POST</h4>
+            <!-- HTML generated using hilite.me -->
+            <!-- HTML generated using hilite.me -->
+            <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre
+                    style="margin: 0; line-height: 125%">    <span style="color: #0000ff">let</span> data = <span
+                    style="color: #0000ff">new</span> FormData();
+    data.append(<span style="color: #a31515">&#39;nombre&#39;</span>, <span style="color: #a31515">&#39;John&#39;</span>);
+    data.append(<span style="color: #a31515">&#39;apellido&#39;</span>, <span
+                        style="color: #a31515">&#39;Die&#39;</span>);
+
+        axios({
+            url: <span style="color: #a31515">&#39;data.php&#39;</span>,
+            method: <span style="color: #a31515">&#39;POST&#39;</span>,
+            data: data
+        }).then(<span style="color: #0000ff">function</span> (response) {
+            console.log(response.data);
+        }).<span style="color: #0000ff">catch</span>(<span style="color: #0000ff">function</span> (error) {
+            console.log(error.response.statusText);
+        });
+</pre>
+            </div>
+
+
+            </pre></div>
+        <div class="col">
+            <h4>Respuesta</h4>
+            <!-- HTML generated using hilite.me -->
+            <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre
+                    style="margin: 0; line-height: 125%">{<span style="color: #a31515">&quot;nombre&quot;</span>:<span
+                    style="color: #a31515">&quot;John&quot;</span>,<span
+                    style="color: #a31515">&quot;apellido&quot;</span>:<span
+                    style="color: #a31515">&quot;Die&quot;</span>}
+</pre>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+</div>
+
+<script src="https://unpkg.com/axios@0.16.1/dist/axios.min.js"></script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<script>
+
+    let get = document.querySelector('.btn-get');
+    get.addEventListener('click', function () {
+        axios({
+            url: 'data.php',
+            method: 'GET',
+            timeout: 3000,
+            responseType: 'JSON',
+        }).then(function (response) {
+            console.log(response.data);
+        }).catch(function (error) {
+            console.log(error.response.statusText);
+        });
+    });
+
+    let data = new FormData();
+    data.append('nombre', 'John');
+    data.append('apellido', 'Die');
+
+    let post = document.querySelector('.btn-post');
+    post.addEventListener('click', function () {
+        axios({
+            url: 'data.php',
+            method: 'POST',
+            data: data
+        }).then(function (response) {
+            console.log(response.data);
+        }).catch(function (error) {
+            console.log(error.response.statusText);
+        });
+    });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
