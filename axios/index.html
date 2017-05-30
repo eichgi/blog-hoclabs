@@ -124,15 +124,29 @@
     let get = document.querySelector('.btn-get');
     get.addEventListener('click', function () {
         axios({
-            url: 'data.php',
+            url: 'dat.php',
             method: 'GET',
             timeout: 3000,
             responseType: 'JSON',
         }).then(function (response) {
-            console.log(response.data);
+            console.log(response);
+            console.log(response.status);
+            console.log(response.statusText);
+            console.log(response.headers);
         }).catch(function (error) {
+            console.log(error.response.data);
+            console.log(error.response.status);
             console.log(error.response.statusText);
         });
+
+        /** SHORTCUT*/
+        /*axios.get('data.php?ID=12345')
+         .then(function (response) {
+         console.log(response);
+         })
+         .catch(function (error) {
+         console.log(error);
+         });*/
     });
 
     let data = new FormData();
@@ -150,6 +164,13 @@
         }).catch(function (error) {
             console.log(error.response.statusText);
         });
+
+        /** SHORTCUT */
+        /*axios.post('data.php', data).then(function (response) {
+         console.log(response);
+         }).catch(function (error) {
+         console.log(error);
+         });*/
     });
 </script>
 </body>
